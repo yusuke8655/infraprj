@@ -1,6 +1,25 @@
-<h1>コンピューター  一覧</h1>
+{% extends 'infra/base.html' %}
+
+{% block content %}
+<h1>IT資産一覧</h1>
 <hr>
-{% for computer in computers %}
-    <h2>{{ computer.name }}</h2>
-    <a href="{% url 'computer_detail' computer.pk %}">詳細情報へ</a>
-{% endfor %}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">コンピューター名</th>
+            <th scope="col">リンク</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for computer in computers %}
+        <tr>
+            <th scope="row">{{ computer.id }}</th>
+            <td>{{ computer.name }}</td>
+            <td><a href="{% url 'computer_detail' computer.pk %}">詳細情報へ</a></td>
+        </tr>
+        </tbody>
+    {% endfor %}
+</table>
+
+{% endblock content %}

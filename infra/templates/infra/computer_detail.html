@@ -1,13 +1,39 @@
-<h1>{{ computer.name }}</h1>
-<hr>
-<p>{{ computer.cpu }}</p>
-<hr>
-<p>{{ computer.memory_cap }}[GB]</p>
-<hr>
-<p>{{ computer.strage_cap }}[GB]</p>
-<hr>
-<p>{{ computer.os }}</p>
-<hr>
-<p>{{ computer.created_at }}</p>
-<hr>
-<p>{{ computer.updated_at }}</p>
+{% extends 'infra/base.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        詳細情報
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th scope="row">コンピューター名</th>
+                    <td>{{ computer.name }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">CPU</th>
+                    <td>{{ computer.cpu }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">メモリ容量</th>
+                    <td>{{ computer.memory_cap }} [GB]</td>
+                </tr>
+                <tr>
+                <tr>
+                    <th scope="row">ストレージ容量</th>
+                    <td>{{ computer.strage_cap }} [GB]</td>
+                </tr>
+                <tr>
+                    <th scope="row">OS</th>
+                    <td>{{ computer.os }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer text-muted">
+        最終更新：{{ computer.updated_at }}
+    </div>
+</div>
+{% endblock content %}
