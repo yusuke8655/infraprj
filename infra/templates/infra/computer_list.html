@@ -16,7 +16,7 @@
         <tr>
             <th scope="row">{{ computer.id }}</th>
             <td>{{ computer.name }}</td>
-            <td><a href="{% url 'computer_detail' computer.pk %}">詳細情報へ</a></td>
+            <td><a href="{% url 'infra:detail' computer.pk %}">詳細情報へ</a></td>
         </tr>
         </tbody>
     {% endfor %}
